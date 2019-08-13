@@ -1,5 +1,5 @@
 const graphql = require('graphql');
-const {GraphQLObjectType, GraphQLString, GraphQLID , GraphQLInt} = graphql;
+const {GraphQLObjectType,GraphQLSchema,GraphQLString, GraphQLID , GraphQLInt} = graphql;
 const _ = require('lodash');
 
 // root queries are how we init
@@ -34,7 +34,7 @@ const RootQuery = new GraphQLObjectType ({
       // you'll need to pass args because otherwise you wont know WHICH book.
     resolve(parent,args) {
 
-      _find(books,{id: args.id}// <-- this function is the function to
+      return _find(books,{id: args.id})// <-- this function is the function to
       //code to get data from db / other source
       // line 35 -
     }
@@ -43,7 +43,6 @@ const RootQuery = new GraphQLObjectType ({
   }
 })
 
-module.export = new GraphQLSchema({
+module.exports = new GraphQLSchema({
   query: RootQuery
 })
-
