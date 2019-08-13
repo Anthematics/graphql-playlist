@@ -5,7 +5,8 @@ const schema = require ('./schema/schema')
 const app = express();
 
 app.use('/graphql',graphqlHTTP({
-    schema
+    schema,
+    graphiql: true
 /* will pass in options later on
 schema needs to be passed here.
 */
