@@ -40,7 +40,7 @@ const RootQuery = new GraphQLObjectType ({
       // you'll need to pass args because otherwise you wont know WHICH book.
     resolve(parent,args) {
 
-      return _find(books,{id: args.id})// <-- this function is the function to
+      return _.find(books,{id: args.id})// <-- this function is the function to
       //code to get data from db / other source
       // line 35 -
     }
