@@ -5,6 +5,12 @@ const _ = require('lodash');
 // root queries are how we init
 //this is all relational
 
+let books = [
+  {name: 'Sandman: preludes and nocturnes', genre: 'Fantasy', id:1},
+  {name: 'American Gods', genre:'Fantasy', id:2},
+  {name: 'How I do sports', genre:'Memoir', id:3},
+]
+
 const BookType = new GraphQLObjectType({
   name: 'Book',
   fields: () => ({
